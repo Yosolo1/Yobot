@@ -644,7 +644,8 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id, "Archivo eliminado con exito...")
             else: bot.sendMessage(update.message.chat.i, "No se pudo loguear")            
            except: bot.sendMessage(update.message.chat.id, "No se pudo eliminar el archivo")
-        url = msgText
+        elif 'http' in msgText:
+            url = msgText
             ddl(update,bot,message,url,file_name='',thread=thread,jdb=jdb)
         else:
             #if update:
