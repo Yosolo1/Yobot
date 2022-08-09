@@ -264,7 +264,7 @@ def onmessage(update,bot:ObigramClient):
         else:
             mensaje = "No tienes acceso"
             reply_markup = inlineKeyboardMarkup(
-                r1=[inlineKeyboardButton('Admin',url='https://t.me/rockstar984')]
+                r1=[inlineKeyboardButton('Admin',url='https://t.me/Luis_Daniel_Diaz')]
             )
                 
             bot.sendMessage(update.message.chat.id,mensaje,reply_markup=reply_markup)
@@ -745,7 +745,7 @@ def main():
     bot_token = config.bot_token
     print('init bot.')
     #set in debug
-    #bot_token = '5350913309:AAE6_F3tyck8PQSComzgd0o6AeQ3xpKDcIU'
+    #bot_token = '5381305150:AAFaPZ3Sln_NRVnDpoyMc0knmsDzFzEzOJs'
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
     bot.onCallbackData('/cancel ',cancel_task)
