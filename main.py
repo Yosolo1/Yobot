@@ -644,17 +644,9 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id, "Archivo eliminado con exito...")
             else: bot.sendMessage(update.message.chat.i, "No se pudo loguear")            
            except: bot.sendMessage(update.message.chat.id, "No se pudo eliminar el archivo")
-        elif '/download' in msgText:
-           try:
-            getUser = user_info
-            rename = getUser['rename'] 
-            url = msgText.split(" ")[1]
-            ddl(update,bot,message,url,file_name='',thread=thread,jdb=jdb,username=username)
-           except Exception as ex:
-            bot.editMessageText(message,"Error al intentar bajar el archivo"+str(ex))
-    except Exception as ex:
-           print(str(ex))
-           bot.sendMessage(update.message.chat.id,str(ex))
+        elif 'http' in msgText:
+            url = msgText
+            ddl(update,bot,message,url,file_name='',thread=thread,jdb=jdb)
 
 def cancel_task(update,bot:ObigramClient):
     try:
